@@ -1,19 +1,25 @@
 
 # BuildXSS
-Build XSS is a Semi-Automatic XSS Payload Generator.
+Build XSS is a Semi-Automatic, Open Source XSS Payload Generator.
 
-**Author  :** Samet ŞAHİN
-**Version :** 1.0
+**Language :** Bourne Again Shell (BASH)
+
 
 
 
 ## Download
-Open the Repository
-`git clone https://github.com/f4lcone/BuildXSS.git`
-Open BuildXSS Path
-`cd BuildXSS`
+*Open the Repository*
+ - `git clone https://github.com/f4lcone/BuildXSS.git`
+
+*Open BuildXSS Path*
+- `cd BuildXSS`
 
 ## Usage
-`./BuildXSS`
+*Run with BASH*
+- `./BuildXSS`
+
+**Version :**  Beta **1.0**
+
+ **Author  :** Samet ŞAHİN
 
 Thanks.
